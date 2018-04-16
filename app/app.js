@@ -23,7 +23,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Pour le style
 app.use(favicon(path.join(__dirname, 'favicon.ico')));
+app.use('/mdbootstrap', express.static(path.join(__dirname, '..', 'node_modules/mdbootstrap')));
 
 // Routes
 app.use('/', indexRouter);
